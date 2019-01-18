@@ -8,7 +8,6 @@ public class MessageHandler : Singleton<MessageHandler> {
 
     // Use this for initialization
     void Start () {
-        Debug.Log(Network.player.ipAddress);
         CustomMessages.Instance.MessageHandlers[CustomMessages.TestMessageID.Calling] = this.OnCalling;
         CustomMessages.Instance.MessageHandlers[CustomMessages.TestMessageID.hanging] = this.Onhanging;
         CustomMessages.Instance.MessageHandlers[CustomMessages.TestMessageID.Receiving] = this.OnReceiving;

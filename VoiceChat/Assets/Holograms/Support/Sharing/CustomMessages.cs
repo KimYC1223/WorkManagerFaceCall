@@ -558,7 +558,7 @@ public class CustomMessages : Singleton<CustomMessages>
 
     public String ReadString(NetworkInMessage msg) {
         int length = msg.ReadInt32();
-        byte[] result = new byte[1024];
+        byte[] result = new byte[1024 * 40];
 
         msg.ReadArray(result,(uint)length);
 
@@ -567,7 +567,7 @@ public class CustomMessages : Singleton<CustomMessages>
 
     public byte[] ReadByteArray(NetworkInMessage msg) {
         int length = msg.ReadInt32();
-        byte[] result = new byte[1024];
+        byte[] result = new byte[1024 * 40];
 
         msg.ReadArray(result, (uint)length);
 
