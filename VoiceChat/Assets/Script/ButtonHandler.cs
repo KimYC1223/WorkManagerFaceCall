@@ -27,9 +27,8 @@ public class ButtonHandler : MonoBehaviour {
 
         switch ( button ) {
             case MainUI.HEAD_LogOut:
-                string test1 = "test1";
-                string test2 = "test2";
-                CustomMessages.Instance.SendCalling(test1,test2);
+                byte[] test1 = { 0, 2, 3 };
+                CustomMessages.Instance.SendCameraData(test1);
                 Debug.Log("HEAD_LogOut");
                 break;
 

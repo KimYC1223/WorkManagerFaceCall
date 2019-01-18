@@ -6,8 +6,9 @@ using Academy.HoloToolkit.Unity;
 
 public class MessageHandler : Singleton<MessageHandler> {
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
+        Debug.Log(Network.player.ipAddress);
         CustomMessages.Instance.MessageHandlers[CustomMessages.TestMessageID.Calling] = this.OnCalling;
         CustomMessages.Instance.MessageHandlers[CustomMessages.TestMessageID.hanging] = this.Onhanging;
         CustomMessages.Instance.MessageHandlers[CustomMessages.TestMessageID.Receiving] = this.OnReceiving;
@@ -17,7 +18,7 @@ public class MessageHandler : Singleton<MessageHandler> {
 
         SharingSessionTracker.Instance.SessionJoined += Instance_SessionJoined;
     }
-	
+
     private void Instance_SessionJoined ( object sender , SharingSessionTracker.SessionJoinedEventArgs e ) {
   
     }
