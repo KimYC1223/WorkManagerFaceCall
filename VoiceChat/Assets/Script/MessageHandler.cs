@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Academy.HoloToolkit.Sharing;
 using Academy.HoloToolkit.Unity;
+using UnityEngine.UI;
 
 public class MessageHandler : Singleton<MessageHandler> {
+
+    Texture2D texture;
+    public RawImage target;
+
 
     // Use this for initialization
     void Start () {
@@ -62,9 +67,21 @@ public class MessageHandler : Singleton<MessageHandler> {
 
     void OnCameraData(NetworkInMessage msg) {
         msg.ReadInt64();
+        
+        if ( texture == null) {
+            //texture = new Texture2D(896, 504, TextureFormat.RGB24, false);
+            texture = new Texture2D(640, 480, TextureFormat.RGBA32, false);
+        }
 
+        byte[] recievedByte;
         Debug.Log("This is CameraData Message.");
-        Debug.Log("data : " + CustomMessages.Instance.ReadByteArray(msg));
+        recievedByte =  CustomMessages.Instance.ReadByteArray(msg);
+        Debug.Log("Length" + recievedByte.Length);
+        texture.LoadRawTextureData(recievedByte);
+        Debug.Log("LoadRawTextureData");
+        texture.Apply();
+        target.texture = texture;
+
     }
 
 }

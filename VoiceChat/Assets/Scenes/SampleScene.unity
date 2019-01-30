@@ -634,6 +634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6a0ad1d99cf352469b7abff0cb1b549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 806096636}
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0
@@ -1847,13 +1848,13 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 806096634}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1977208998}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 180}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -303, y: -589}
@@ -2946,8 +2947,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ClientRole: 0
   IsEmulator: 0
-  ServerAddress: 192.168.14.2
-  EmulServerAddress: 192.168.14.2
+  ServerAddress: 192.168.14.3
+  EmulServerAddress: 192.168.14.3
   ServerPort: 20602
   IsAudioEndpoint: 0
   AutoDiscoverServer: 0
