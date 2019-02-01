@@ -31,6 +31,9 @@ public class CustomMessages : Singleton<CustomMessages>
         Login,
         Logout,
         CameraData,
+        CameraDone,
+        CameraDone2,
+        CameraDone3,
         Max
     }
 
@@ -425,7 +428,52 @@ public class CustomMessages : Singleton<CustomMessages>
                 MessageChannel.Avatar);
         }
     }
-    
+
+    public void SendCameraDone() {
+        if (this.serverConnection != null && this.serverConnection.IsConnected()) {
+            // Create an outgoing network message to contain all the info we want to send
+            NetworkOutMessage msg = CreateMessage((byte)TestMessageID.CameraDone);
+            
+
+            // Send the message as a broadcast, which will cause the server to forward it to all other users in the session.
+            this.serverConnection.Broadcast(
+                msg,
+                MessagePriority.Immediate,
+                MessageReliability.ReliableOrdered,
+                MessageChannel.Avatar);
+        }
+    }
+
+    public void SendCameraDone2() {
+        if (this.serverConnection != null && this.serverConnection.IsConnected()) {
+            // Create an outgoing network message to contain all the info we want to send
+            NetworkOutMessage msg = CreateMessage((byte)TestMessageID.CameraDone);
+
+
+            // Send the message as a broadcast, which will cause the server to forward it to all other users in the session.
+            this.serverConnection.Broadcast(
+                msg,
+                MessagePriority.Immediate,
+                MessageReliability.ReliableOrdered,
+                MessageChannel.Avatar);
+        }
+    }
+
+    public void SendCameraDone3() {
+        if (this.serverConnection != null && this.serverConnection.IsConnected()) {
+            // Create an outgoing network message to contain all the info we want to send
+            NetworkOutMessage msg = CreateMessage((byte)TestMessageID.CameraDone);
+
+
+            // Send the message as a broadcast, which will cause the server to forward it to all other users in the session.
+            this.serverConnection.Broadcast(
+                msg,
+                MessagePriority.Immediate,
+                MessageReliability.ReliableOrdered,
+                MessageChannel.Avatar);
+        }
+    }
+
     //=====================================================================================================================================================
 
 

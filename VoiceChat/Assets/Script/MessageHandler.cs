@@ -9,7 +9,7 @@ public class MessageHandler : Singleton<MessageHandler> {
 
     Texture2D texture;
     public RawImage target;
-
+    public bool lock_flag = true;
 
     // Use this for initialization
     void Start () {
@@ -67,21 +67,25 @@ public class MessageHandler : Singleton<MessageHandler> {
 
     void OnCameraData(NetworkInMessage msg) {
         msg.ReadInt64();
-        
-        if ( texture == null) {
+
+        lock_flag = false;
+        if (texture == null) {
             //texture = new Texture2D(896, 504, TextureFormat.RGB24, false);
-            texture = new Texture2D(640, 480, TextureFormat.RGBA32, false);
+            texture = new Texture2D(224, 126, TextureFormat.RGB24, false);
+            //texture = new Texture2D(160, 120, TextureFormat.RGBA32, false);
         }
 
-        byte[] recievedByte;
-        Debug.Log("This is CameraData Message.");
-        recievedByte =  CustomMessages.Instance.ReadByteArray(msg);
-        Debug.Log("Length" + recievedByte.Length);
-        texture.LoadRawTextureData(recievedByte);
-        Debug.Log("LoadRawTextureData");
-        texture.Apply();
-        target.texture = texture;
+            byte[] recievedByte;
+            Debug.Log("This is CameraData Message.");
+            recievedByte = CustomMessages.Instance.ReadByteArray(msg);
+            Debug.Log("Length" + recievedByte.Length);
+            texture.LoadRawTextureData(recievedByte);
+
+            texture.Apply();
+            target.texture = texture;
+            CustomMessages.Instance.SendCameraDone();
 
     }
 
+    
 }
