@@ -10,6 +10,7 @@ public class MessageHandler : Singleton<MessageHandler> {
     Texture2D texture;
     public RawImage target;
     public bool lock_flag = true;
+    int MessageCount = 0;
 
     // Use this for initialization
     void Start () {
@@ -26,6 +27,7 @@ public class MessageHandler : Singleton<MessageHandler> {
     private void Instance_SessionJoined ( object sender , SharingSessionTracker.SessionJoinedEventArgs e ) {
   
     }
+
 
     void OnCalling(NetworkInMessage msg) {
         msg.ReadInt64();
@@ -67,11 +69,11 @@ public class MessageHandler : Singleton<MessageHandler> {
 
     void OnCameraData(NetworkInMessage msg) {
         msg.ReadInt64();
-
+        MessageCount++;
         lock_flag = false;
         if (texture == null) {
             //texture = new Texture2D(896, 504, TextureFormat.RGB24, false);
-            texture = new Texture2D(224, 126, TextureFormat.RGB24, false);
+            texture = new Texture2D(448, 252, TextureFormat., false);
             //texture = new Texture2D(160, 120, TextureFormat.RGBA32, false);
         }
 
