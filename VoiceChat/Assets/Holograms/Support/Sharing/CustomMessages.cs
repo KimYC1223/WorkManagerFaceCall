@@ -412,13 +412,18 @@ public class CustomMessages : Singleton<CustomMessages>
         }
     }
 
-    public void SendCameraData(byte[] byteArray) {
+    public void SendCameraData(byte[] byteArray, int width, int height, int type) {
         if (this.serverConnection != null && this.serverConnection.IsConnected()) {
             // Create an outgoing network message to contain all the info we want to send
             NetworkOutMessage msg = CreateMessage((byte)TestMessageID.CameraData);
 
             AppendInt32(msg, byteArray.Length);
-            AppendByteArray(msg,byteArray);
+            AppendByteArray(msg, byteArray);
+
+            AppendInt32(msg, width);
+            AppendInt32(msg, height);
+            AppendInt32(msg, type);
+
 
             // Send the message as a broadcast, which will cause the server to forward it to all other users in the session.
             this.serverConnection.Broadcast(

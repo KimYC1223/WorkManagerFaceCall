@@ -69,24 +69,58 @@ public class MessageHandler : Singleton<MessageHandler> {
 
     void OnCameraData(NetworkInMessage msg) {
         msg.ReadInt64();
-        MessageCount++;
-        lock_flag = false;
+
+        byte[] recievedByte;
+        recievedByte = CustomMessages.Instance.ReadByteArray(msg);
+
+        int img_width = CustomMessages.Instance.ReadInt(msg);
+        int img_height = CustomMessages.Instance.ReadInt(msg);
+        int type = CustomMessages.Instance.ReadInt(msg);
+        byte[] YUVtoRGB;
+
         if (texture == null) {
-            //texture = new Texture2D(896, 504, TextureFormat.RGB24, false);
-            texture = new Texture2D(448, 252, TextureFormat., false);
-            //texture = new Texture2D(160, 120, TextureFormat.RGBA32, false);
+            if (type == 0)     // 홀로렌즈일 경우
+                texture = new Texture2D(img_width, img_height, TextureFormat.RGB24, false);
+            else                // 일반 유니티 에디터일 경우
+                texture = new Texture2D(img_width, img_height, TextureFormat.RGBA32, false);
         }
 
-            byte[] recievedByte;
-            Debug.Log("This is CameraData Message.");
-            recievedByte = CustomMessages.Instance.ReadByteArray(msg);
-            Debug.Log("Length" + recievedByte.Length);
-            texture.LoadRawTextureData(recievedByte);
+        // 받은 데이터가 홀로렌즈일 경우
+        // YUV를 RGB로 변환하는 과정
+        if (type == 0) {
+            int img_size = img_width * img_height;
+            YUVtoRGB = new byte[ img_size * 3 ];
 
-            texture.Apply();
-            target.texture = texture;
-            CustomMessages.Instance.SendCameraDone();
+            for (int proc_height = 0; proc_height < img_height ; proc_height++) {
+                for (int proc_width=0; proc_width < img_width ; proc_width++ ) {
+                    byte img_y = recievedByte[ ( proc_height * img_width ) + proc_width];
+                    byte img_u =
+                        recievedByte[img_size +
+                        (proc_height >> 1) * img_width+
+                        ((proc_width >> 1) * 2)];
+                    byte img_v =
+                        recievedByte[img_size +
+                        (proc_height >> 1) * img_width +
+                        ((proc_width >> 1) * 2) + 1];
 
+                    int temp_r = (int)(img_y + 1.596 * (img_v - 128));
+                    int temp_g = (int)(img_y - 0.813 * (img_u - 128) - 0.391 * (img_v - 128));
+                    int temp_b = (int)(img_y + 2.018 * (img_u - 128));
+
+                    byte img_r = (temp_r > 255 ? 255 : (temp_r < 0 ? 0 : temp_r));
+                }
+            }
+
+            
+        }
+        
+        
+
+        texture.LoadRawTextureData(recievedByte);
+
+        texture.Apply();
+        target.texture = texture;
+        CustomMessages.Instance.SendCameraDone();
     }
 
     
