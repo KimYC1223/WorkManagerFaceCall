@@ -4,15 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class CustomMessages : Singleton<CustomMessages>
-{
+public class CustomMessages : Singleton<CustomMessages> {
     /// <summary>
     /// Message enum containing our information bytes to share.
     /// The first message type has to start with UserMessageIDStart
     /// so as not to conflict with HoloToolkit internal messages.
     /// </summary>
-    public enum TestMessageID : byte
-    {
+    public enum TestMessageID : byte {
         HeadTransform = MessageID.UserMessageIDStart,
         UserAvatar,
         UserHit,
@@ -31,31 +29,28 @@ public class CustomMessages : Singleton<CustomMessages>
         Login,
         Logout,
         CameraData,
+        CameraData2,
         CameraDone,
         CameraDone2,
         CameraDone3,
         Max
     }
 
-    public enum UserMessageChannels
-    {
+    public enum UserMessageChannels {
         Anchors = MessageChannel.UserMessageChannelStart,
     }
 
     /// <summary>
     /// Cache the local user's ID to use when sending messages
     /// </summary>
-    public long localUserID
-    {
+    public long localUserID {
         get; set;
     }
 
     public delegate void MessageCallback(NetworkInMessage msg);
     private Dictionary<TestMessageID, MessageCallback> _MessageHandlers = new Dictionary<TestMessageID, MessageCallback>();
-    public Dictionary<TestMessageID, MessageCallback> MessageHandlers
-    {
-        get
-        {
+    public Dictionary<TestMessageID, MessageCallback> MessageHandlers {
+        get {
             return _MessageHandlers;
         }
     }
@@ -71,16 +66,13 @@ public class CustomMessages : Singleton<CustomMessages>
     /// </summary>
     NetworkConnection serverConnection;
 
-    void Start()
-    {
-        InitializeMessageHandlers();        
+    void Start() {
+        InitializeMessageHandlers();
     }
 
-    void InitializeMessageHandlers()
-    {
+    void InitializeMessageHandlers() {
         SharingStage sharingStage = SharingStage.Instance;
-        if (sharingStage != null)
-        {
+        if (sharingStage != null) {
             serverConnection = sharingStage.Manager.GetServerConnection();
             connectionAdapter = new NetworkConnectionAdapter();
         }
@@ -90,10 +82,8 @@ public class CustomMessages : Singleton<CustomMessages>
         // Cache the local user ID
         this.localUserID = SharingStage.Instance.Manager.GetLocalUser().GetID();
 
-        for (byte index = (byte)TestMessageID.HeadTransform; index < (byte)TestMessageID.Max; index++)
-        {
-            if (MessageHandlers.ContainsKey((TestMessageID)index) == false)
-            {
+        for (byte index = (byte)TestMessageID.HeadTransform; index < (byte)TestMessageID.Max; index++) {
+            if (MessageHandlers.ContainsKey((TestMessageID)index) == false) {
                 MessageHandlers.Add((TestMessageID)index, null);
             }
 
@@ -101,8 +91,7 @@ public class CustomMessages : Singleton<CustomMessages>
         }
     }
 
-    private NetworkOutMessage CreateMessage(byte MessageType)
-    {
+    private NetworkOutMessage CreateMessage(byte MessageType) {
         NetworkOutMessage msg = serverConnection.CreateMessage(MessageType);
         msg.Write(MessageType);
         // Add the local userID so that the remote clients know whose message they are receiving
@@ -110,11 +99,9 @@ public class CustomMessages : Singleton<CustomMessages>
         return msg;
     }
 
-    public void SendHeadTransform(Vector3 position, Quaternion rotation, byte HasAnchor)
-    {
+    public void SendHeadTransform(Vector3 position, Quaternion rotation, byte HasAnchor) {
         // If we are connected to a session, broadcast our head info
-        if (this.serverConnection != null && this.serverConnection.IsConnected())
-        {
+        if (this.serverConnection != null && this.serverConnection.IsConnected()) {
             // Create an outgoing network message to contain all the info we want to send
             NetworkOutMessage msg = CreateMessage((byte)TestMessageID.HeadTransform);
 
@@ -131,11 +118,9 @@ public class CustomMessages : Singleton<CustomMessages>
         }
     }
 
-    public void SendShootProjectile(Vector3 position, Vector3 direction)
-    {
+    public void SendShootProjectile(Vector3 position, Vector3 direction) {
         // If we are connected to a session, broadcast our head info
-        if (this.serverConnection != null && this.serverConnection.IsConnected())
-        {
+        if (this.serverConnection != null && this.serverConnection.IsConnected()) {
             // Create an outgoing network message to contain all the info we want to send
             NetworkOutMessage msg = CreateMessage((byte)TestMessageID.ShootProjectile);
 
@@ -151,11 +136,9 @@ public class CustomMessages : Singleton<CustomMessages>
         }
     }
 
-    public void SendUserAvatar(int UserAvatarID)
-    {
+    public void SendUserAvatar(int UserAvatarID) {
         // If we are connected to a session, broadcast our head info
-        if (this.serverConnection != null && this.serverConnection.IsConnected())
-        {
+        if (this.serverConnection != null && this.serverConnection.IsConnected()) {
             // Create an outgoing network message to contain all the info we want to send
             NetworkOutMessage msg = CreateMessage((byte)TestMessageID.UserAvatar);
 
@@ -170,11 +153,9 @@ public class CustomMessages : Singleton<CustomMessages>
         }
     }
 
-    public void SendUserHit(long HitUserID)
-    {
+    public void SendUserHit(long HitUserID) {
         // If we are connected to a session, broadcast our head info
-        if (this.serverConnection != null && this.serverConnection.IsConnected())
-        {
+        if (this.serverConnection != null && this.serverConnection.IsConnected()) {
             // Create an outgoing network message to contain all the info we want to send
             NetworkOutMessage msg = CreateMessage((byte)TestMessageID.UserHit);
 
@@ -189,11 +170,9 @@ public class CustomMessages : Singleton<CustomMessages>
         }
     }
 
-    public void SendStageTransform(Vector3 position, Quaternion rotation)
-    {
+    public void SendStageTransform(Vector3 position, Quaternion rotation) {
         // If we are connected to a session, broadcast our head info
-        if (this.serverConnection != null && this.serverConnection.IsConnected())
-        {
+        if (this.serverConnection != null && this.serverConnection.IsConnected()) {
             // Create an outgoing network message to contain all the info we want to send
             NetworkOutMessage msg = CreateMessage((byte)TestMessageID.StageTransform);
 
@@ -208,11 +187,9 @@ public class CustomMessages : Singleton<CustomMessages>
         }
     }
 
-    public void SendMultiSharingTransform(int id, Vector3 position, Quaternion rotation)
-    {
+    public void SendMultiSharingTransform(int id, Vector3 position, Quaternion rotation) {
         // If we are connected to a session, broadcast our head info
-        if (this.serverConnection != null && this.serverConnection.IsConnected())
-        {
+        if (this.serverConnection != null && this.serverConnection.IsConnected()) {
             // Create an outgoing network message to contain all the info we want to send
             NetworkOutMessage msg = CreateMessage((byte)TestMessageID.MultiSharingTransform);
             AppendInt32(msg, id);
@@ -227,11 +204,9 @@ public class CustomMessages : Singleton<CustomMessages>
         }
     }
 
-    public void SendFixedObjectTransform(Vector3 position, Quaternion rotation, int ani_playing)
-    {
+    public void SendFixedObjectTransform(Vector3 position, Quaternion rotation, int ani_playing) {
         // If we are connected to a session, broadcast our head info
-        if (this.serverConnection != null && this.serverConnection.IsConnected())
-        {
+        if (this.serverConnection != null && this.serverConnection.IsConnected()) {
             // Create an outgoing network message to contain all the info we want to send
             NetworkOutMessage msg = CreateMessage((byte)TestMessageID.FixedObjectTransform);
 
@@ -246,11 +221,9 @@ public class CustomMessages : Singleton<CustomMessages>
         }
     }
 
-    public void SendSharingGlobalAnchor(Vector3 position, Quaternion rotation)
-    {
+    public void SendSharingGlobalAnchor(Vector3 position, Quaternion rotation) {
         // If we are connected to a session, broadcast our head info
-        if (this.serverConnection != null && this.serverConnection.IsConnected())
-        {
+        if (this.serverConnection != null && this.serverConnection.IsConnected()) {
             // Create an outgoing network message to contain all the info we want to send
             NetworkOutMessage msg = CreateMessage((byte)TestMessageID.SharingGlobalAnchor);
             AppendTransform(msg, position, rotation);
@@ -264,11 +237,9 @@ public class CustomMessages : Singleton<CustomMessages>
         }
     }
 
-    public void SendResetStage()
-    {
+    public void SendResetStage() {
         // If we are connected to a session, broadcast our head info
-        if (this.serverConnection != null && this.serverConnection.IsConnected())
-        {
+        if (this.serverConnection != null && this.serverConnection.IsConnected()) {
             // Create an outgoing network message to contain all the info we want to send
             NetworkOutMessage msg = CreateMessage((byte)TestMessageID.ResetStage);
 
@@ -281,11 +252,9 @@ public class CustomMessages : Singleton<CustomMessages>
         }
     }
 
-    public void SendExplodeTarget()
-    {
+    public void SendExplodeTarget() {
         // If we are connected to a session, broadcast that the target exploded.
-        if (this.serverConnection != null && this.serverConnection.IsConnected())
-        {
+        if (this.serverConnection != null && this.serverConnection.IsConnected()) {
             // Create an outgoing network message to contain all the info we want to send.
             NetworkOutMessage msg = CreateMessage((byte)TestMessageID.ExplodeTarget);
 
@@ -298,13 +267,11 @@ public class CustomMessages : Singleton<CustomMessages>
         }
     }
 
-    public void SendDateTime()
-    {
-        if (this.serverConnection != null && this.serverConnection.IsConnected())
-        {
+    public void SendDateTime() {
+        if (this.serverConnection != null && this.serverConnection.IsConnected()) {
             // Create an outgoing network message to contain all the info we want to send
             NetworkOutMessage msg = CreateMessage((byte)TestMessageID.DateTime);
-            
+
             AppendDateTime(msg, DateTime.Now);
 
             // Send the message as a broadcast, which will cause the server to forward it to all other users in the session.
@@ -322,7 +289,7 @@ public class CustomMessages : Singleton<CustomMessages>
     //  여기서 부터 추가됨
     //=====================================================================================================================================================
 
-    public void SendCalling(String srcIP,String desIP) {
+    public void SendCalling(String srcIP, String desIP) {
         if (this.serverConnection != null && this.serverConnection.IsConnected()) {
             // Create an outgoing network message to contain all the info we want to send
             NetworkOutMessage msg = CreateMessage((byte)TestMessageID.Calling);
@@ -412,7 +379,7 @@ public class CustomMessages : Singleton<CustomMessages>
         }
     }
 
-    public void SendCameraData(byte[] byteArray, int width, int height, int type) {
+    public void SendCameraData(byte[] byteArray, int width, int height) {
         if (this.serverConnection != null && this.serverConnection.IsConnected()) {
             // Create an outgoing network message to contain all the info we want to send
             NetworkOutMessage msg = CreateMessage((byte)TestMessageID.CameraData);
@@ -422,8 +389,28 @@ public class CustomMessages : Singleton<CustomMessages>
 
             AppendInt32(msg, width);
             AppendInt32(msg, height);
-            AppendInt32(msg, type);
 
+
+            // Send the message as a broadcast, which will cause the server to forward it to all other users in the session.
+            this.serverConnection.Broadcast(
+                msg,
+                MessagePriority.Immediate,
+                MessageReliability.ReliableOrdered,
+                MessageChannel.Avatar);
+        }
+    }
+
+    public void SendCameraData(byte[] byteArray, int width, int height, int type) {
+        if (this.serverConnection != null && this.serverConnection.IsConnected()) {
+            // Create an outgoing network message to contain all the info we want to send
+            NetworkOutMessage msg = CreateMessage((byte)TestMessageID.CameraData2);
+
+            AppendInt32(msg, byteArray.Length);
+            AppendByteArray(msg, byteArray);
+
+            AppendInt32(msg, width);
+            AppendInt32(msg, height);
+            AppendInt32(msg, type);
 
             // Send the message as a broadcast, which will cause the server to forward it to all other users in the session.
             this.serverConnection.Broadcast(
@@ -438,7 +425,7 @@ public class CustomMessages : Singleton<CustomMessages>
         if (this.serverConnection != null && this.serverConnection.IsConnected()) {
             // Create an outgoing network message to contain all the info we want to send
             NetworkOutMessage msg = CreateMessage((byte)TestMessageID.CameraDone);
-            
+
 
             // Send the message as a broadcast, which will cause the server to forward it to all other users in the session.
             this.serverConnection.Broadcast(
@@ -482,10 +469,8 @@ public class CustomMessages : Singleton<CustomMessages>
     //=====================================================================================================================================================
 
 
-    public void SendInt32(int val)
-    {
-        if (this.serverConnection != null && this.serverConnection.IsConnected())
-        {
+    public void SendInt32(int val) {
+        if (this.serverConnection != null && this.serverConnection.IsConnected()) {
             // Create an outgoing network message to contain all the info we want to send
             NetworkOutMessage msg = CreateMessage((byte)TestMessageID.SharingAnimation);
             AppendInt32(msg, val);
@@ -499,70 +484,58 @@ public class CustomMessages : Singleton<CustomMessages>
         }
     }
 
-    void OnDestroy()
-    {
-        if (this.serverConnection != null)
-        {
-            for (byte index = (byte)TestMessageID.HeadTransform; index < (byte)TestMessageID.Max; index++)
-            {
+    void OnDestroy() {
+        if (this.serverConnection != null) {
+            for (byte index = (byte)TestMessageID.HeadTransform; index < (byte)TestMessageID.Max; index++) {
                 this.serverConnection.RemoveListener(index, this.connectionAdapter);
             }
             this.connectionAdapter.MessageReceivedCallback -= OnMessageReceived;
         }
     }
 
-    void OnMessageReceived(NetworkConnection connection, NetworkInMessage msg)
-    {
+    void OnMessageReceived(NetworkConnection connection, NetworkInMessage msg) {
         byte messageType = msg.ReadByte();
         MessageCallback messageHandler = MessageHandlers[(TestMessageID)messageType];
-        if (messageHandler != null)
-        {
+        if (messageHandler != null) {
             messageHandler(msg);
         }
     }
 
     #region HelperFunctionsForWriting
 
-    void AppendTransform(NetworkOutMessage msg, Vector3 position, Quaternion rotation)
-    {
+    void AppendTransform(NetworkOutMessage msg, Vector3 position, Quaternion rotation) {
         AppendVector3(msg, position);
         AppendQuaternion(msg, rotation);
     }
 
-    void AppendTransform(NetworkOutMessage msg, Vector3 position, Quaternion rotation, int ani_playing)
-    {
+    void AppendTransform(NetworkOutMessage msg, Vector3 position, Quaternion rotation, int ani_playing) {
         AppendVector3(msg, position);
         AppendQuaternion(msg, rotation);
         AppendAnimationPlaying(msg, ani_playing);
     }
 
-    void AppendVector3(NetworkOutMessage msg, Vector3 vector)
-    {
+    void AppendVector3(NetworkOutMessage msg, Vector3 vector) {
         msg.Write(vector.x);
         msg.Write(vector.y);
         msg.Write(vector.z);
     }
 
-    void AppendQuaternion(NetworkOutMessage msg, Quaternion rotation)
-    {
+    void AppendQuaternion(NetworkOutMessage msg, Quaternion rotation) {
         msg.Write(rotation.x);
         msg.Write(rotation.y);
         msg.Write(rotation.z);
         msg.Write(rotation.w);
     }
 
-    void AppendAnimationPlaying(NetworkOutMessage msg, int  playing)
-    {
+    void AppendAnimationPlaying(NetworkOutMessage msg, int playing) {
         AppendInt32(msg, playing);
     }
 
-    void AppendInt32(NetworkOutMessage msg, int int32)
-    {
+    void AppendInt32(NetworkOutMessage msg, int int32) {
         msg.Write(int32);
     }
 
-    void AppendDateTime(NetworkOutMessage msg, DateTime date)
-    {
+    void AppendDateTime(NetworkOutMessage msg, DateTime date) {
         int hour = date.Hour;
         int min = date.Minute;
         int sec = date.Second;
@@ -576,12 +549,12 @@ public class CustomMessages : Singleton<CustomMessages>
         Debug.Log(hour + ":" + min + ":" + min + "." + msec);
 
     }
-    
+
     void AppendString(NetworkOutMessage msg, String str) {
         byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(str);
-        uint length= (uint)byteArray.Length;
+        uint length = (uint)byteArray.Length;
 
-        msg.WriteArray(byteArray,length);
+        msg.WriteArray(byteArray, length);
     }
 
     void AppendByteArray(NetworkOutMessage msg, byte[] byteArray) {
@@ -594,18 +567,15 @@ public class CustomMessages : Singleton<CustomMessages>
 
     #region HelperFunctionsForReading
 
-    public Vector3 ReadVector3(NetworkInMessage msg)
-    {
+    public Vector3 ReadVector3(NetworkInMessage msg) {
         return new Vector3(msg.ReadFloat(), msg.ReadFloat(), msg.ReadFloat());
     }
 
-    public Quaternion ReadQuaternion(NetworkInMessage msg)
-    {
+    public Quaternion ReadQuaternion(NetworkInMessage msg) {
         return new Quaternion(msg.ReadFloat(), msg.ReadFloat(), msg.ReadFloat(), msg.ReadFloat());
     }
 
-    public int ReadInt(NetworkInMessage msg)
-    {
+    public int ReadInt(NetworkInMessage msg) {
         return msg.ReadInt32();
     }
 
@@ -613,7 +583,7 @@ public class CustomMessages : Singleton<CustomMessages>
         int length = msg.ReadInt32();
         byte[] result = new byte[1354753];
 
-        msg.ReadArray(result,(uint)length);
+        msg.ReadArray(result, (uint)length);
 
         return System.Text.Encoding.Default.GetString(result);
     }
@@ -627,14 +597,13 @@ public class CustomMessages : Singleton<CustomMessages>
         return result;
     }
 
-    public DateTime ReadDateTime(NetworkInMessage msg)
-    {
+    public DateTime ReadDateTime(NetworkInMessage msg) {
         int hour = msg.ReadInt32();
         int min = msg.ReadInt32();
         int sec = msg.ReadInt32();
         int msec = msg.ReadInt32();
         Debug.Log(hour + ":" + min + ":" + sec + "." + msec);
-        return new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hour % 24, min % 60, sec % 60,  msec % 1000);
+        return new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hour % 24, min % 60, sec % 60, msec % 1000);
     }
 
     #endregion HelperFunctionsForReading

@@ -164,6 +164,7 @@
     <Compile Include="Assets\HoloToolkit-Sharing-240\Utilities\Billboard.cs" />
     <Compile Include="Assets\Script\ButtonHandler.cs" />
     <Compile Include="Assets\Script\MessageHandler.cs" />
+    <Compile Include="Assets\Script\PcToHoloScreenSender.cs" />
     <None Include="Assets\HoloToolkit-Sharing-240\Shaders\UnlitConfigurable.shader" />
     <None Include="Assets\HoloToolkit-Sharing-240\Shaders\VertexLitConfigurable.cginc" />
     <None Include="Assets\Dissonance\changelog.txt" />
