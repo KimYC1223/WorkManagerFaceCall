@@ -1,0 +1,369 @@
+-debug
+-target:library
+-nowarn:0169
+-langversion:4
+-out:Temp/Assembly-CSharp-firstpass.dll
+-nostdlib
+-unsafe
+-r:Library/ScriptAssemblies/UnityEditor.StandardEvents.dll
+-r:Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.AIModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.ARModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.AccessibilityModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.AnimationModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.AssetBundleModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.AudioModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.BaselibModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.ClothModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.CloudWebServicesModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.ClusterInputModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.CoreModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.CrashReportingModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.DirectorModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.FacebookModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.GameCenterModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.GridModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.HotReloadModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.IMGUIModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.ImageConversionModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.InputModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.ParticlesLegacyModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.PhysicsModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.Physics2DModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.SpatialTrackingModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.StyleSheetsModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.SubstanceModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.TLSModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.TerrainModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.TextRenderingModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.TilemapModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.TimelineModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.UIModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.UIElementsModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.UNETModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.UmbraModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.UnityConnectModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.VRModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.VehiclesModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.VideoModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.WebModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.WindModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.XRModule.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/UnityEditor.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\Managed/Unity.Locator.dll"
+-r:"C:/Program Files/Unity/2018.1.0f2/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll"
+-r:"C:/Program Files/Unity/2018.1.0f2/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
+-r:"C:/Program Files/Unity/2018.1.0f2/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
+-r:"C:/Program Files/Unity/2018.1.0f2/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll"
+-r:"C:/Program Files/Unity/2018.1.0f2/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll"
+-r:"C:/Program Files/Unity/2018.1.0f2/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll"
+-r:"C:/Program Files/Unity/2018.1.0f2/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll"
+-r:"C:/Program Files/Unity/2018.1.0f2/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll"
+-r:"C:/Users/김영찬/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll"
+-r:"C:/Users/김영찬/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.purchasing@2.0.1/UnityEngine.Purchasing.dll"
+-r:"C:/Users/김영찬/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\MonoBleedingEdge\lib\mono\unity\mscorlib.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Core.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Runtime.Serialization.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Xml.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Xml.Linq.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\MonoBleedingEdge\lib\mono\unity\UnityScript.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\MonoBleedingEdge\lib\mono\unity\UnityScript.Lang.dll"
+-r:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\MonoBleedingEdge\lib\mono\unity\Boo.Lang.dll"
+-define:UNITY_5_3_OR_NEWER
+-define:UNITY_5_4_OR_NEWER
+-define:UNITY_5_5_OR_NEWER
+-define:UNITY_5_6_OR_NEWER
+-define:UNITY_2017_1_OR_NEWER
+-define:UNITY_2017_2_OR_NEWER
+-define:UNITY_2017_3_OR_NEWER
+-define:UNITY_2018_1_OR_NEWER
+-define:UNITY_2018_1_0
+-define:UNITY_2018_1
+-define:UNITY_2018
+-define:PLATFORM_ARCH_64
+-define:UNITY_64
+-define:UNITY_ANALYTICS
+-define:ENABLE_AUDIO
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_DUCK_TYPING
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_PHYSICS
+-define:ENABLE_SPRITERENDERER_FLIPPING
+-define:ENABLE_SPRITES
+-define:ENABLE_GRID
+-define:ENABLE_TILEMAP
+-define:ENABLE_TERRAIN
+-define:ENABLE_RAKNET
+-define:ENABLE_DIRECTOR
+-define:ENABLE_UNET
+-define:ENABLE_LZMA
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_WEBCAM
+-define:ENABLE_WWW
+-define:ENABLE_CLOUD_SERVICES_COLLAB
+-define:ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS
+-define:ENABLE_CLOUD_SERVICES_ADS
+-define:ENABLE_CLOUD_HUB
+-define:ENABLE_CLOUD_PROJECT_ID
+-define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
+-define:ENABLE_CLOUD_SERVICES_UNET
+-define:ENABLE_CLOUD_SERVICES_BUILD
+-define:ENABLE_CLOUD_LICENSE
+-define:ENABLE_EDITOR_HUB
+-define:ENABLE_EDITOR_HUB_LICENSE
+-define:ENABLE_WEBSOCKET_CLIENT
+-define:ENABLE_DIRECTOR_AUDIO
+-define:ENABLE_DIRECTOR_TEXTURE
+-define:ENABLE_TIMELINE
+-define:ENABLE_EDITOR_METRICS
+-define:ENABLE_EDITOR_METRICS_CACHING
+-define:ENABLE_MANAGED_JOBS
+-define:ENABLE_MANAGED_TRANSFORM_JOBS
+-define:INCLUDE_DYNAMIC_GI
+-define:INCLUDE_GI
+-define:ENABLE_MONO_BDWGC
+-define:PLATFORM_SUPPORTS_MONO
+-define:RENDER_SOFTWARE_CURSOR
+-define:INCLUDE_PUBNUB
+-define:ENABLE_PLAYMODE_TESTS_RUNNER
+-define:ENABLE_VIDEO
+-define:ENABLE_PACKMAN
+-define:ENABLE_CUSTOM_RENDER_TEXTURE
+-define:ENABLE_LOCALIZATION
+-define:PLATFORM_STANDALONE_WIN
+-define:PLATFORM_STANDALONE
+-define:UNITY_STANDALONE_WIN
+-define:UNITY_STANDALONE
+-define:ENABLE_SUBSTANCE
+-define:ENABLE_RUNTIME_GI
+-define:ENABLE_MOVIES
+-define:ENABLE_NETWORK
+-define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+-define:ENABLE_UNITYWEBREQUEST
+-define:ENABLE_CLOUD_SERVICES
+-define:ENABLE_CLOUD_SERVICES_ANALYTICS
+-define:ENABLE_CLOUD_SERVICES_PURCHASING
+-define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+-define:ENABLE_OUT_OF_PROCESS_CRASH_HANDLER
+-define:ENABLE_EVENT_QUEUE
+-define:ENABLE_CLUSTERINPUT
+-define:ENABLE_VR
+-define:ENABLE_AR
+-define:ENABLE_WEBSOCKET_HOST
+-define:ENABLE_MONO
+-define:NET_2_0_SUBSET
+-define:ENABLE_PROFILER
+-define:DEBUG
+-define:TRACE
+-define:UNITY_ASSERTIONS
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_64
+-define:UNITY_EDITOR_WIN
+-define:ENABLE_UNITY_COLLECTIONS_CHECKS
+-define:UNITY_TEAM_LICENSE
+-define:ENABLE_VSTU
+-define:UNITY_POST_PROCESSING_STACK_V2
+Assets/Plugins/Dissonance/Core/AssemblyAttributes.cs
+Assets/Plugins/Dissonance/Core/Audio/ArvCalculator.cs
+Assets/Plugins/Dissonance/Core/Audio/AudioFileWriter.cs
+Assets/Plugins/Dissonance/Core/Audio/AudioSettingsWatcher.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/AecmRoutingMode.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/AecSuppressionLevels.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/BasePreprocessingPipeline.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/BasicMicrophoneCapture.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/BufferedSampleProvider.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/CapturePipelineManager.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/EncoderPipeline.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/IAmplitudeProvider.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/IChannelPriorityManager.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/IFrameProvider.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/IMicrophoneCapture.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/IMicrophoneHandler.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/IMicrophoneProvider.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/IMicrophoneSubscriber.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/IPreprocessingPipeline.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/MicrophoneCapture.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/NoiseSuppressionLevels.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/PreprocessingPipeline.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/Resampler.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/SampleToFrameProvider.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/SineSampleProvider.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/SpeexDspNative.cs
+Assets/Plugins/Dissonance/Core/Audio/Capture/WebRtcPreprocessingPipeline.cs
+Assets/Plugins/Dissonance/Core/Audio/Codecs/Codec.cs
+Assets/Plugins/Dissonance/Core/Audio/Codecs/EncodedBuffer.cs
+Assets/Plugins/Dissonance/Core/Audio/Codecs/Identity/IdentityDecoder.cs
+Assets/Plugins/Dissonance/Core/Audio/Codecs/Identity/IdentityEncoder.cs
+Assets/Plugins/Dissonance/Core/Audio/Codecs/IVoiceDecoder.cs
+Assets/Plugins/Dissonance/Core/Audio/Codecs/IVoiceEncoder.cs
+Assets/Plugins/Dissonance/Core/Audio/Codecs/Opus/Opus.cs
+Assets/Plugins/Dissonance/Core/Audio/Codecs/Opus/OpusDecoder.cs
+Assets/Plugins/Dissonance/Core/Audio/Codecs/Opus/OpusEncoder.cs
+Assets/Plugins/Dissonance/Core/Audio/Fader.cs
+Assets/Plugins/Dissonance/Core/Audio/FormatConverter.cs
+Assets/Plugins/Dissonance/Core/Audio/OpenChannelVolumeDuck.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/BufferedDecoder.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/DecoderFactory.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/DecoderPipeline.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/DesyncCalculator.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/EncodedAudio.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/EncodedAudioBuffer.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/FrameFormat.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/FrameToSampleConverter.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/IDecoderPipeline.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/IFrameSource.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/IPriorityManager.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/IRemoteChannelProvider.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/ISampleSource.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/IVoicePlayback.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/PlaybackOptions.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/Resampler.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/SamplePlaybackComponent.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/SessionContext.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/SoftClipSampleSource.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/SpeechSession.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/SpeechSessionStream.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/VoicePlayback.cs
+Assets/Plugins/Dissonance/Core/Audio/Playback/VolumeRampedFrameSource.cs
+Assets/Plugins/Dissonance/Core/AudioQuality.cs
+Assets/Plugins/Dissonance/Core/BaseCommsTrigger.cs
+Assets/Plugins/Dissonance/Core/Channel/ChannelPriority.cs
+Assets/Plugins/Dissonance/Core/Channel/ChannelProperties.cs
+Assets/Plugins/Dissonance/Core/Channel/Channels.cs
+Assets/Plugins/Dissonance/Core/Channel/IChannel.cs
+Assets/Plugins/Dissonance/Core/Channel/PlayerChannel.cs
+Assets/Plugins/Dissonance/Core/Channel/PlayerChannels.cs
+Assets/Plugins/Dissonance/Core/Channel/RemoteChannel.cs
+Assets/Plugins/Dissonance/Core/Channel/RoomChannel.cs
+Assets/Plugins/Dissonance/Core/Channel/RoomChannels.cs
+Assets/Plugins/Dissonance/Core/Channels.cs
+Assets/Plugins/Dissonance/Core/ChannelType.cs
+Assets/Plugins/Dissonance/Core/CodecSettings.cs
+Assets/Plugins/Dissonance/Core/CodecSettingsLoader.cs
+Assets/Plugins/Dissonance/Core/CommActivationMode.cs
+Assets/Plugins/Dissonance/Core/CommTriggerTarget.cs
+Assets/Plugins/Dissonance/Core/Config/ChatRoomSettings.cs
+Assets/Plugins/Dissonance/Core/Config/DebugSettings.cs
+Assets/Plugins/Dissonance/Core/Config/Preferences.cs
+Assets/Plugins/Dissonance/Core/Config/VoiceSettings.cs
+Assets/Plugins/Dissonance/Core/Datastructures/BaseWindowCalculator.cs
+Assets/Plugins/Dissonance/Core/Datastructures/ConcurrentPool.cs
+Assets/Plugins/Dissonance/Core/Datastructures/PacketLossCalculator.cs
+Assets/Plugins/Dissonance/Core/Datastructures/Pool.cs
+Assets/Plugins/Dissonance/Core/Datastructures/POTBuffer.cs
+Assets/Plugins/Dissonance/Core/Datastructures/RingBuffer.cs
+Assets/Plugins/Dissonance/Core/Datastructures/TransferBuffer.cs
+Assets/Plugins/Dissonance/Core/Datastructures/Unions.cs
+Assets/Plugins/Dissonance/Core/Datastructures/WindowDeviationCalculator.cs
+Assets/Plugins/Dissonance/Core/DissonanceException.cs
+Assets/Plugins/Dissonance/Core/Extensions/ArraySegmentExtensions.cs
+Assets/Plugins/Dissonance/Core/Extensions/IEnumerableExtensions.cs
+Assets/Plugins/Dissonance/Core/Extensions/Int32Extensions.cs
+Assets/Plugins/Dissonance/Core/Extensions/StringExtensions.cs
+Assets/Plugins/Dissonance/Core/Extensions/UShortExtensions.cs
+Assets/Plugins/Dissonance/Core/FrameSize.cs
+Assets/Plugins/Dissonance/Core/FrameSkipDetector.cs
+Assets/Plugins/Dissonance/Core/HandyCollections/Heap/IMinHeap.cs
+Assets/Plugins/Dissonance/Core/HandyCollections/Heap/MinHeap.cs
+Assets/Plugins/Dissonance/Core/IDissonancePlayer.cs
+Assets/Plugins/Dissonance/Core/ILossEstimator.cs
+Assets/Plugins/Dissonance/Core/Jetbrains.cs
+Assets/Plugins/Dissonance/Core/Log.cs
+Assets/Plugins/Dissonance/Core/LogCategory.cs
+Assets/Plugins/Dissonance/Core/LogLevel.cs
+Assets/Plugins/Dissonance/Core/NAudio/ISampleProvider.cs
+Assets/Plugins/Dissonance/Core/NAudio/WaveFileWriter.cs
+Assets/Plugins/Dissonance/Core/NAudio/WaveFormat.cs
+Assets/Plugins/Dissonance/Core/NAudio/WdlResampler.cs
+Assets/Plugins/Dissonance/Core/Networking/BaseClient.cs
+Assets/Plugins/Dissonance/Core/Networking/BaseClientCollection.cs
+Assets/Plugins/Dissonance/Core/Networking/BaseCommsNetwork.cs
+Assets/Plugins/Dissonance/Core/Networking/BaseServer.cs
+Assets/Plugins/Dissonance/Core/Networking/ChannelBitField.cs
+Assets/Plugins/Dissonance/Core/Networking/Client/ChannelCollection.cs
+Assets/Plugins/Dissonance/Core/Networking/Client/ClientStatus.cs
+Assets/Plugins/Dissonance/Core/Networking/Client/CommsProcessor.cs
+Assets/Plugins/Dissonance/Core/Networking/Client/ConnectionNegotiator.cs
+Assets/Plugins/Dissonance/Core/Networking/Client/EventQueue.cs
+Assets/Plugins/Dissonance/Core/Networking/Client/IClient.cs
+Assets/Plugins/Dissonance/Core/Networking/Client/OpenChannel.cs
+Assets/Plugins/Dissonance/Core/Networking/Client/PacketDelaySimulator.cs
+Assets/Plugins/Dissonance/Core/Networking/Client/PacketRouter.cs
+Assets/Plugins/Dissonance/Core/Networking/Client/PeerCollection.cs
+Assets/Plugins/Dissonance/Core/Networking/Client/PeerVoiceReceiver.cs
+Assets/Plugins/Dissonance/Core/Networking/Client/RoomMembershipManager.cs
+Assets/Plugins/Dissonance/Core/Networking/Client/SendQueue.cs
+Assets/Plugins/Dissonance/Core/Networking/Client/SlaveClientCollection.cs
+Assets/Plugins/Dissonance/Core/Networking/Client/TextReceiver.cs
+Assets/Plugins/Dissonance/Core/Networking/Client/TextSender.cs
+Assets/Plugins/Dissonance/Core/Networking/Client/VoicePacketOptions.cs
+Assets/Plugins/Dissonance/Core/Networking/Client/VoiceReceiver.cs
+Assets/Plugins/Dissonance/Core/Networking/Client/VoiceSender.cs
+Assets/Plugins/Dissonance/Core/Networking/ClientIdCollection.cs
+Assets/Plugins/Dissonance/Core/Networking/ClientInfo.cs
+Assets/Plugins/Dissonance/Core/Networking/ICommsNetwork.cs
+Assets/Plugins/Dissonance/Core/Networking/ICommsNetworkState.cs
+Assets/Plugins/Dissonance/Core/Networking/MessageTypes.cs
+Assets/Plugins/Dissonance/Core/Networking/PacketReader.cs
+Assets/Plugins/Dissonance/Core/Networking/PacketWriter.cs
+Assets/Plugins/Dissonance/Core/Networking/ReceivingState.cs
+Assets/Plugins/Dissonance/Core/Networking/RoomClientsCollection.cs
+Assets/Plugins/Dissonance/Core/Networking/RoutingTable.cs
+Assets/Plugins/Dissonance/Core/Networking/Server/ClientCollection.cs
+Assets/Plugins/Dissonance/Core/Networking/Server/IServer.cs
+Assets/Plugins/Dissonance/Core/Networking/Server/MasterClientCollection.cs
+Assets/Plugins/Dissonance/Core/Networking/Server/PacketRouter.cs
+Assets/Plugins/Dissonance/Core/Networking/Server/ServerRelay.cs
+Assets/Plugins/Dissonance/Core/Networking/Server/ServerState.cs
+Assets/Plugins/Dissonance/Core/Networking/TextPacket.cs
+Assets/Plugins/Dissonance/Core/Networking/TrafficCounter.cs
+Assets/Plugins/Dissonance/Core/PacketLossMonitor.cs
+Assets/Plugins/Dissonance/Core/PlaybackPool.cs
+Assets/Plugins/Dissonance/Core/PlayerCollection.cs
+Assets/Plugins/Dissonance/Core/PlayerTrackerManager.cs
+Assets/Plugins/Dissonance/Core/RoomIdConversion.cs
+Assets/Plugins/Dissonance/Core/Rooms.cs
+Assets/Plugins/Dissonance/Core/SemanticVersion.cs
+Assets/Plugins/Dissonance/Core/TextChat.cs
+Assets/Plugins/Dissonance/Core/Threading/DThread.cs
+Assets/Plugins/Dissonance/Core/Threading/LockedValue.cs
+Assets/Plugins/Dissonance/Core/Threading/SpinLock.cs
+Assets/Plugins/Dissonance/Core/TokenSet.cs
+Assets/Plugins/Dissonance/Core/Unit.cs
+Assets/Plugins/Dissonance/Core/VAD/IVoiceActivationListener.cs
+Assets/Plugins/Dissonance/Core/VAD/IVoiceDetector.cs
+Assets/Plugins/Dissonance/Core/VAD/VadDebugUI.cs
+Assets/Plugins/Dissonance/Core/VAD/WebRtcVoiceDetector.cs
+Assets/Plugins/Dissonance/Core/VoicePlayerState.cs
+Assets/Plugins/Dissonance/Core/VolumeFaderSettings.cs
+Assets/Plugins/Dissonance/Demo/ChatInputController.cs
+Assets/Plugins/Dissonance/Demo/ChatLogController.cs
+Assets/Plugins/Dissonance/Demo/Logo.cs
+Assets/Plugins/Dissonance/Demo/SpeakerIndicator.cs
+Assets/Plugins/Dissonance/Demo/TriggerVisualizer.cs
+Assets/Plugins/Dissonance/DissonanceComms.cs
+Assets/Plugins/Dissonance/DissonanceVersion.cs
+Assets/Plugins/Dissonance/Resources/DissonanceRootPath.cs
+Assets/Plugins/Dissonance/VoiceBroadcastTrigger.cs
+Assets/Plugins/Dissonance/VoiceReceiptTrigger.cs
+-lib:"C:\Program Files\Unity\2018.1.0f2\Editor\Data\MonoBleedingEdge\lib\mono\unity"

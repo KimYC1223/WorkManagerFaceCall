@@ -1,0 +1,52 @@
+*{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+  background-image: linear-gradient(90deg,rgb(224, 224, 224),rgb(196, 195, 195));
+}
+
+.centerDiv {
+  width:600px;
+  height:600px;
+  background-color:white;
+  padding:10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  left:50%;
+  top:50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  border-radius: 15px;
+  box-shadow: 0px 10px 5px 5px rgba(40, 40, 40,0.4);
+  font-size: 18pt;
+  line-height: 26pt;
+  text-transform: uppercase;
+  cursor:pointer;
+  text-align: center;
+}
+
+#windows{
+  display: inline-block;
+  margin-top: 20px;
+  background-color: black;
+  border:none;
+}
+
+span{
+  color:black;
+  font-size: 40px;
+  line-height: 60px;
+}
+
+.hangUpBtn{
+  margin-top: 20px;
+  display: inline-block;
+  width:200px;
+  height: 60px;
+  background-color: rgb(150, 23, 15);
+  line-height: 60px;
+  color:white;
+  border-radius: 15px;
+  cursor:pointer;
+}
