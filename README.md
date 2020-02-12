@@ -1,11 +1,12 @@
 # HololLens Video Call Web page
 
+![image](https://user-images.githubusercontent.com/40852277/74333146-b0a47a80-4dda-11ea-9e35-4f35b45a36a2.png)
+
 홀로렌즈 기반의 화상통화를 위한 웹 페이지
 
 기존 서버는 tomcat과 같은 jsp 서버로 운영이 되는듯 하지만
 
 일단은 테스트용도로 NodeJS의 Express 모듈을 이용한 웹서버로 테스트한다.
-
 
 
 ---
@@ -117,7 +118,7 @@ cmd를 켜고,  ```cd WorkManagerFaceCall\HoloLensVideoCallServe```를 입력한
 
 아래와 같은 테스트 페이지를 볼 수 있다.
 
-
+![image](https://user-images.githubusercontent.com/40852277/74333064-85219000-4dda-11ea-86f2-e2bf1386a6bb.png)
 
 ### 2.7 Unity 2018.1.0f 다운로드
 
@@ -179,7 +180,7 @@ cmd를 켜고,  ```cd WorkManagerFaceCall\HoloLensVideoCallServe```를 입력한
 
 그러면 인트로페이지에서 전화가 왔음을 볼 수 있다.
 
-
+![image](https://user-images.githubusercontent.com/40852277/74333121-9ec2d780-4dda-11ea-9109-2b8c95bf242b.png)
 
 ### 3.4 전화 받기
 
